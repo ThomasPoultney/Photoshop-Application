@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PhotoshopController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="339.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="522.0" minWidth="10.0" prefWidth="519.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="192.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="501.33330281575513" minHeight="10.0" prefHeight="670.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="110.33334350585938" minHeight="10.0" prefHeight="56.000030517578125" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="110.33334350585938" minHeight="10.0" prefHeight="56.000030517578125" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="titleLabel" text="Photoshop V2" textAlignment="CENTER" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB" size="31.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imageView" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <image>
+            <Image url="@raytrace.jpg" />
+         </image>
+      </ImageView>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+         <children>
+            <Button fx:id="invertButton" mnemonicParsing="false" onAction="#invertButtonAction" prefHeight="30.0" prefWidth="200.0" text="Invert" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Slider fx:id="GammaCorrectionSlider" majorTickUnit="1.0" max="3.0" maxWidth="-Infinity" minWidth="200.0" onMouseClicked="#SliderAction" prefHeight="49.0" prefWidth="200.0" showTickLabels="true" showTickMarks="true" snapToTicks="true">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin></Slider>
+            <Button fx:id="contrastStretchinggButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ContrastButtonClicked" prefHeight="30.0" prefWidth="200.0" text="Select Points For CS" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="ShowhistogramButton" layoutX="89.0" layoutY="10.0" mnemonicParsing="false" onAction="#HistogramButtonClicked" prefHeight="30.0" prefWidth="200.0" text="Show Histograms" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="equaliseHistogramButton" mnemonicParsing="false" onAction="#equaliseHistogramButtonClicked" prefHeight="30.0" prefWidth="200.0" text="Equalise Histogram" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+         <children>
+            <Button fx:id="equaliseHistogramButton1" mnemonicParsing="false" onAction="#equaliseHistogramButtonClicked" prefHeight="30.0" prefWidth="200.0" text="reset Image" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="CrossCorrelationButton" mnemonicParsing="false" onAction="#CrossCorrelationButtonClicked" prefHeight="30.0" prefWidth="210.0" text="Cross correlation" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="applyButton" mnemonicParsing="false" onAction="#applyButtonClicked" prefHeight="30.0" prefWidth="200.0" text="Apply CS" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="greyScale" mnemonicParsing="false" onAction="#greyScaleButtonClicked" prefHeight="30.0" prefWidth="200.0" text="greyscale" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox prefHeight="488.0" prefWidth="338.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <children>
+            <LineChart fx:id="histogramGraph" animated="false" createSymbols="false" prefHeight="1000.0" prefWidth="1000.0">
+              <xAxis>
+                <NumberAxis autoRanging="false" minorTickCount="2" side="BOTTOM" upperBound="255.0" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <RadioButton fx:id="redRB" mnemonicParsing="false" onAction="#redRBClicked" prefWidth="100.0" selected="true" text="Red" />
+                  <RadioButton fx:id="greenRB" mnemonicParsing="false" onAction="#greenRBClicked" prefWidth="100.0" selected="true" text="Green" />
+                  <RadioButton fx:id="blueRB" mnemonicParsing="false" onAction="#blueRBClicked" prefWidth="100.0" selected="true" text="Blue" />
+                  <RadioButton fx:id="brightnessRB" mnemonicParsing="false" onAction="#brightnessRBClicked" prefWidth="100.0" selected="true" text="Brightness" />
+                  <RadioButton fx:id="CFRB" mnemonicParsing="false" onAction="#CFRBClicked" prefWidth="100.0" selected="true" text="CF" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</GridPane>
